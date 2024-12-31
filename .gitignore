@@ -1,0 +1,9 @@
+assets/external/
+*.db
+*.py[cod]
+__pycache__/
+.web
+.gradio
+.env
+.venv/
+dist/
