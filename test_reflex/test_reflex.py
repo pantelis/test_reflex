@@ -50,7 +50,6 @@ def index() -> rx.Component:
 
 app.add_page(index, route="/")
 app.add_page(gradio_lite, route="/gradio_lite")
-#app.add_page(gradio_native, route="/gradio_native")
 app.add_page(gradio_embed_iframe, route="/gradio_embed_iframe")
 app.add_page(gradio_embed_webcomponent, route="/gradio_embed_webcomponent")
 
