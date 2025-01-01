@@ -17,8 +17,9 @@ class State(rx.State):
 
 app = rx.App(
     head_components=[
-        rx.html('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@gradio/lite/dist/lite.css" />'),
-       rx.script(src="https://cdn.jsdelivr.net/npm/@gradio/lite/dist/lite.js"),
+        rx.html('<script type="module" crossorigin src="https://cdn.jsdelivr.net/npm/@gradio/lite/dist/lite.js"></script>' +
+		        '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@gradio/lite/dist/lite.css" />'),
+        # rx.script(src="https://cdn.jsdelivr.net/npm/@gradio/lite/dist/lite.js"),
         rx.script(src="https://gradio.s3.us-west-2.amazonaws.com/3.12.0/gradio.js"),
     ]
 )

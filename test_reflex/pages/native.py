@@ -12,7 +12,7 @@ def gradio_native() -> gr.Interface:
         outputs=["text"],
     )
 
-gradio_native = gradio_native()
+# gradio_native = gradio_native()
 
 #gradio_native.launch(share=True, debug=True, server_port=7860)
 
