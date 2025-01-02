@@ -56,8 +56,7 @@ app.add_page(gradio_embed_iframe, route="/gradio_embed_iframe")
 app.add_page(gradio_embed_webcomponent, route="/gradio_embed_webcomponent")
 app.add_page(gradio_redirect, route="/gradio_redirect")
 
-# The following code is for the FastAPI integration and can be used only when the backend 
-# Redirect to Gradio app
+# The following code is for the FastAPI redirect - see README.md for more details
 CUSTOM_PATH = "/gradio_redirect"
 
 reflex_fastapi = app.api
