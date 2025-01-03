@@ -27,3 +27,33 @@ allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/mylib"]
+
+[tool.rye.scripts]
+# Command to render the Quarto project
+render = "quarto render docsite"
+
+# Command to copy Quarto output to Reflex public directory
+write = """
+python -c '
+import shutil, os
+quarto_output_dir = "docsite/_site"
+reflex_public_dir = ".web/public/doscsite"
+if os.path.exists(reflex_public_dir):
+    shutil.rmtree(reflex_public_dir)
+shutil.copytree(quarto_output_dir, reflex_public_dir)
+print("Static Quarto content updated.")
+'
+"""
+
+# Command to run Reflex development server
+serve = "reflex run"
+
+# Combined command: Render Quarto, update public dir, and start Reflex dev server
+start = {chain =  ["render", "serve", "write"]}
+
+watch = """
+watchmedo shell-command \
+    --patterns="*.qmd;*.css;*.js" \
+    --recursive \
+    --command='rye run start'
+"""
