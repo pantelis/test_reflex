@@ -1,5 +1,9 @@
 ---
 title: "docsite"
+# include-in-header:
+#   text: |
+#     <script src="https://cdn.tailwindcss.com"></script>
+#     <script src="https://cdn.jsdelivr.net/npm/radix-ui@1.0.1/index.min.js"></script>
 ---
 
 This is a Quarto website.
